@@ -13,11 +13,14 @@ class Pessoa:
     @classmethod
     def metodo_classe(cls):
         return f'{cls} - olhos {cls.olhos}'
+class Homem(Pessoa):
+    pass
+
 
 if __name__ == '__main__':
-    bernardo = Pessoa(nome='Bernardo')
+    bernardo = Homem(nome='Bernardo')
     #mariana = Pessoa(nome ="Mariana")
-    deividi = Pessoa(bernardo, nome="Deividi")
+    deividi = Homem(bernardo, nome="Deividi")
     #deividi = Pessoa(mariana, nome="Deividi")
     print(Pessoa.cumprimentar(deividi))
     print(id(deividi))
@@ -36,4 +39,8 @@ if __name__ == '__main__':
     print(id(Pessoa.olhos), id(deividi.olhos), id(bernardo.olhos))
     print(Pessoa.metodo_estatico(), deividi.metodo_estatico())
     print(Pessoa.metodo_classe(), deividi.metodo_classe())
-
+    pessoa = Pessoa("Anonimo")
+    print(isinstance(pessoa, Pessoa))
+    print(isinstance(pessoa, Homem))
+    print(isinstance(deividi, Pessoa))
+    print(isinstance(deividi, Homem))
