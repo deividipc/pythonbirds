@@ -15,10 +15,12 @@ class Pessoa:
         return f'{cls} - olhos {cls.olhos}'
 class Homem(Pessoa):
     pass
+class Mutante(Pessoa):
+    olhos = 3
 
 
 if __name__ == '__main__':
-    bernardo = Homem(nome='Bernardo')
+    bernardo = Mutante(nome='Bernardo')
     #mariana = Pessoa(nome ="Mariana")
     deividi = Homem(bernardo, nome="Deividi")
     #deividi = Pessoa(mariana, nome="Deividi")
@@ -31,6 +33,7 @@ if __name__ == '__main__':
         print(filho.nome)
     deividi.sobrenome ="Pinheiro"
     del deividi.filhos
+    deividi.olhos=1
     print(deividi.__dict__)
     print(bernardo.__dict__)
     print(Pessoa.olhos)
@@ -44,3 +47,4 @@ if __name__ == '__main__':
     print(isinstance(pessoa, Homem))
     print(isinstance(deividi, Pessoa))
     print(isinstance(deividi, Homem))
+    print(bernardo.olhos)
